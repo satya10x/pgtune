@@ -8,7 +8,8 @@ INSTALL:
 1. Clone the repo.
 2. cd /path/pgtune/ pip install -e . 
 
-RUN:
+HOW TO RUN:
+
 Change the config.py db settings like host, port etc for your db
 
 cmd: pgtune
