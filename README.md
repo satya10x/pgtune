@@ -5,12 +5,14 @@ Requirement:
 pg_stat_statements. How to install: https://www.postgresql.org/docs/9.4/pgstatstatements.html
 
 INSTALL:
-1. Clone the repo. 
+1. Clone the repo.
 2. cd /path/pgtune/ pip install -e . 
 
 RUN:
 Change the config.py db settings like host, port etc for your db
+
 cmd: pgtune
+
 It will generate a /tmp/pgtune.txt file with tuning logs. 
 
 Limitations/Enhancements needed:
