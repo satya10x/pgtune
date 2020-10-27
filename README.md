@@ -12,11 +12,11 @@ HOW TO RUN:
 
 Change the config.py db settings like host, port etc for your db
 
-cmd: **pgtune**
+**pgtune**
 
 It will generate a /tmp/pgtune.txt file with tuning logs. 
 
-Example of txt file: 
+Example of log file generated 
 ```
 ----CONFIG related changes----
 
