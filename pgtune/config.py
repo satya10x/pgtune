@@ -39,7 +39,7 @@ CONFIG_MESSAGES = {
 # Queries
 CONFIG_QUERY = "SHOW ALL"
 PG_STAT_STATEMENT = "SELECT * FROM PG_STAT_STATEMENTS"
-SLOW_QUERIES = "SELECT query FROM PG_STAT_STATEMENTS order by total_time/calls limit 100"
+SLOW_QUERIES = "SELECT query FROM PG_STAT_STATEMENTS order by total_exec_time / calls limit 100"
 HIGHEST_USED_QUERIES = "SELECT query FROM PG_STAT_STATEMENTS order by calls limit 100"
 TABLE_INDEX_QUERY = """
 						SELECT ARRAY_TO_STRING(ARRAY_AGG(a.attname), ', ') AS column_names
