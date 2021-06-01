@@ -9,7 +9,7 @@ setup(
     author_email='satyajit@zerodha.com',
     license='BSD 2-clause',
     packages=['pgtune'],
-    install_requires=['psycopg2',                     
+    install_requires=['psycopg2','pglast'                     
                       ],
 entry_points={
         'console_scripts': [

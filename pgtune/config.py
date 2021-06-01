@@ -1,9 +1,9 @@
 HOST = "127.0.0.1"
-DB = "xx"
+DB = "yogjadha"
 PASSWORD = "xxx"
-USER = "xx"
-PORT = "xxxx"
-
+USER = "yogjadha"
+PORT = "5432"
+PG_VERSION=13  # PostgreSQL Major Version
 # Default config
 DEFAULT_CONFIG = {
 	"work_mem": {"value": "4MB",
@@ -39,7 +39,10 @@ CONFIG_MESSAGES = {
 # Queries
 CONFIG_QUERY = "SHOW ALL"
 PG_STAT_STATEMENT = "SELECT * FROM PG_STAT_STATEMENTS"
-SLOW_QUERIES = "SELECT query FROM PG_STAT_STATEMENTS order by total_time/calls limit 100"
+if PG_VERSION > 12:
+	SLOW_QUERIES = "SELECT query FROM PG_STAT_STATEMENTS order by total_exec_time / calls limit 100"
+else:
+	SLOW_QUERIES = "SELECT query FROM PG_STAT_STATEMENTS order by total_time / calls limit 100"
 HIGHEST_USED_QUERIES = "SELECT query FROM PG_STAT_STATEMENTS order by calls limit 100"
 TABLE_INDEX_QUERY = """
 						SELECT ARRAY_TO_STRING(ARRAY_AGG(a.attname), ', ') AS column_names
